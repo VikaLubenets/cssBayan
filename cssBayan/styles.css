@@ -4,10 +4,101 @@
     padding: 0;
 }
 
-title {
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    display: block;
+    margin-bottom: 15%;
+    margin-top: 15%;
+}
+
+.accordion {
+    max-width: 100%;
+    margin: 0rem auto;
+}
+
+.accordion_item {
+    border: 0.1rem solid transparent;
+    border-bottom-color: grey;
+    transition: background 0.5s ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 0;
+}
+
+.accordion_item:first-child {
+    border-top-color: grey;
+}
+
+.accordion_item:hover {
+    background-color: grey;
+}
+
+.accordion_item_title {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    display: block;
+    cursor: pointer;
+    padding: 5% 5%;
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icon {
+    width: 15px;
+    height: 15px;
+    margin-left: 1rem;
+    display: block;
+    flex-shrink: 0;
+}
+
+.accordion_item_input {
+    appearance: none;
+    position: absolute;
+}
+
+.accordion_item_input:checked + .accordion_content {
+    display: block;
+}
+
+.accordion_content {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.meme {
+    width: 70%;
+    height: 70%;
+    margin: 1% auto;
+}
+
+.text {
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 5% 5%;
+    text-align: center;
 }
