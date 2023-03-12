@@ -1,0 +1,263 @@
+/*General styles start*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*General styles end*/
+
+/*Header mobile styles start*/
+
+.title {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1.7rem;
+    display: block;
+    margin-bottom: 3rem;
+    margin-top: 2rem;
+}
+
+/*Header mobile styles end*/
+
+/*Main mobile styles start*/
+
+.accordion-title {
+    display: block;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+    margin-bottom: 2rem;
+    color:blue;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.accordion {
+    width: 70vw;
+    margin: 0rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.accordion_item {
+    border: 0.1rem solid transparent;
+    border-bottom-color: grey;
+    transition: all 0.5s ease-out;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 2% auto;
+    min-height: 1.2rem;
+}
+
+.accordion_item:last-child {
+    margin-bottom: 2rem;
+}
+
+.accordion_item:first-child {
+    border-top-color: grey;
+}
+
+.accordion_item_label {
+    width: 100%;
+}
+
+.accordion_item_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3% 0;
+    color: blue;
+    width: 100%;
+}
+
+.title-item {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.2rem;
+}
+
+.icon-plus {
+    width: 1rem;
+    height: 1rem;
+    transition: all 2s ease-out;
+    margin-left: 1rem;
+    flex-shrink: 0;
+}
+
+.accordion_item_input {
+    appearance: none;
+    width: 0;
+    height: 0;
+}
+
+.accordion_content {
+    display: none;
+    text-align: center;
+    width: 100%;
+    transition: all 2s ease-out;
+}
+
+.meme {
+    width: 80%;
+    height: 80%;
+    margin-top: 0;
+    margin-bottom: 5%;
+    transition: all 2s;
+    border-radius: 0.5rem;
+}
+
+.accordion_item_input:checked + .accordion_item_label .accordion_content {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    flex-direction: column;
+    transition: all 2s ease-out;
+    animation: pic 1s;
+}
+
+.accordion_item_input:checked + .accordion_item_label .accordion_item_title .icon-plus {
+    transform: rotate(45deg);
+}
+
+.accordion_item_input:checked + .accordion_item_label .accordion_item_title .title-item {
+    color:black;
+}
+
+@keyframes pic {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: .25;
+    }
+    50% {
+        opacity: .5;
+    }
+    75% {
+        opacity: .75;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/*Main mobile styles end*/
+
+/* Media tablet starts*/
+
+@media only screen and (min-width: 600px) {
+    
+    .title {
+        font-size: 2.3rem;
+    }
+    
+    .accordion-title {
+        font-size: 2rem;
+    }
+
+    .title-item {
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+    }
+
+    .icon-plus {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .meme {
+        width: 50%;
+        height: 50%;
+        border-radius: 1.5rem;
+    }
+
+}
+
+/* Media tablet ends*/
+
+/* Media desctop starts*/
+
+@media screen and (min-width: 1025px) {
+    
+    .title {
+        font-size: 3rem;
+    }
+
+    .accordion-title {
+        font-size: 2.5rem;
+    }
+
+    .title-item {
+        font-size: 2rem;
+    }
+    
+    .icon-plus {
+        width: 2rem;
+        height: 2rem;
+        display: none;
+        transition: all 1s ease-out;
+    }
+
+    .meme {
+        width: 30%;
+        height: 30%;
+        border-radius: 1.5rem;
+    }
+
+    .accordion_item_title {
+        cursor: pointer;
+    }
+    
+    .accordion_content {
+        cursor: pointer;
+    }
+
+    .accordion_item_title:active .title-item {
+        color: blue;
+        opacity: 0.6;
+    }
+
+    .accordion:hover .icon-plus {
+        display: block;
+    }
+
+    .accordion:hover .accordion_item_title {
+        color: black;
+    }
+
+    .accordion_item_label:hover .accordion_content {
+        display: block;
+        animation: pic 1s;
+    }
+
+    .accordion_item_label:hover .icon-plus {
+        transform: rotate(45deg);
+    }
+
+}
+
+/* Media desctop ends*/
+
